@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style chung cho các nút -->
+    <style name="CalculatorButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <!-- Style cho nút số -->
+    <style name="CalculatorButton.Number" parent="@style/CalculatorButton">
+        <item name="android:background">@color/gray</item>
+        <item name="backgroundTint">@color/light_gray</item>
+    </style>
+
+    <!-- Style cho nút chức năng -->
+    <style name="CalculatorButton.Function" parent="@style/CalculatorButton">
+        <item name="android:background">@color/gray</item>
+        <item name="backgroundTint">@color/gray</item>
+    </style>
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <!-- TextView để hiển thị kết quả -->
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="#E0E0E0"
+        android:gravity="end|center_vertical"
+        android:padding="10dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="60sp" />
+
+    <!-- GridLayout cho các nút -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:padding="5dp">
+
+        <!-- Row 1: CE, C, BS, / -->
+        <Button
+            android:id="@+id/btnCE"
+            style="@style/CalculatorButton.Function"
+            android:text="CE" />
+
+        <Button
+            android:id="@+id/btnC"
+            style="@style/CalculatorButton.Function"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/btnBS"
+            style="@style/CalculatorButton.Function"
+            android:text="BS" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            style="@style/CalculatorButton.Function"
+            android:text="/" />
+
+        <!-- Row 2: 7, 8, 9, x -->
+        <Button
+            android:id="@+id/btn7"
+            style="@style/CalculatorButton.Number"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/CalculatorButton.Number"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/CalculatorButton.Number"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            style="@style/CalculatorButton.Function"
+            android:text="x" />
+
+        <!-- Row 3: 4, 5, 6, - -->
+        <Button
+            android:id="@+id/btn4"
+            style="@style/CalculatorButton.Number"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/CalculatorButton.Number"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/CalculatorButton.Number"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btnSubtract"
+            style="@style/CalculatorButton.Function"
+            android:text="-" />
+
+        <!-- Row 4: 1, 2, 3, + -->
+        <Button
+            android:id="@+id/btn1"
+            style="@style/CalculatorButton.Number"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/CalculatorButton.Number"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn3"
+            style="@style/CalculatorButton.Number"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            style="@style/CalculatorButton.Function"
+            android:text="+" />
+
+        <!-- Row 5: +/-, 0, ., = -->
+        <Button
+            android:id="@+id/btnPlusMinus"
+            style="@style/CalculatorButton.Function"
+            android:text="+/-" />
+
+        <Button
+            android:id="@+id/btn0"
+            style="@style/CalculatorButton.Number"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btnDot"
+            style="@style/CalculatorButton.Function"
+            android:text="." />
+
+        <Button
+            android:id="@+id/btnEquals"
+            style="@style/CalculatorButton.Function"
+            android:text="=" />
+
+    </GridLayout>
+</LinearLayout>
