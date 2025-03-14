@@ -5,6 +5,17 @@
     android:orientation="vertical"
     android:padding="10dp">
 
+    <!-- TextView để hiển thị biểu thức -->
+    <TextView
+        android:id="@+id/textViewExpression"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E0E0E0"
+        android:gravity="end"
+        android:padding="5dp"
+        android:text=""
+        android:textColor="#666666"
+        android:textSize="20sp" />
     <!-- TextView để hiển thị kết quả -->
     <TextView
         android:id="@+id/textViewResult"

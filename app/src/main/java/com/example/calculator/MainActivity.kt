@@ -8,8 +8,10 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var textViewExpression: TextView
     private lateinit var textViewResult: TextView
     private var currentInput: String = ""
+    private var currentExpression: String = ""
     private var result: BigDecimal = BigDecimal.ZERO
     private var lastOperation: String = "="
 
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        textViewExpression = findViewById(R.id.textViewExpression)
         textViewResult = findViewById(R.id.textViewResult)
 
         val numberButtons = arrayOf(
@@ -88,9 +91,14 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 val displayResult = result.stripTrailingZeros()
-                textViewResult.text = if (displayResult.remainder(BigDecimal.ONE) == BigDecimal.ZERO) displayResult.toLong().toString() else displayResult.toString()
+                val formattedResult = if (displayResult.remainder(BigDecimal.ONE) == BigDecimal.ZERO) displayResult.toLong().toString() else displayResult.toString()
+                currentExpression = "$currentExpression $lastOperation $currentInput"
+                textViewExpression.text = currentExpression
+                textViewResult.text = formattedResult
             } else {
                 result = inputNumber
+                currentExpression = currentInput
+                textViewExpression.text = currentExpression
             }
 
             lastOperation = operation
@@ -109,6 +117,9 @@ class MainActivity : AppCompatActivity() {
             currentInput = ""
             return
         }
+
+        currentExpression = "$currentExpression $lastOperation $currentInput"
+        textViewExpression.text = currentExpression
 
         when (lastOperation) {
             "+" -> result = result.add(inputNumber)
@@ -135,7 +146,8 @@ class MainActivity : AppCompatActivity() {
         currentInput = ""
         lastOperation = "="
         val displayResult = result.stripTrailingZeros()
-        textViewResult.text = if (displayResult.remainder(BigDecimal.ONE) == BigDecimal.ZERO) displayResult.toLong().toString() else displayResult.toString()
+        val formattedResult = if (displayResult.remainder(BigDecimal.ONE) == BigDecimal.ZERO) displayResult.toLong().toString() else displayResult.toString()
+        textViewResult.text = formattedResult
     }
 
     private fun clearEntry() {
@@ -145,9 +157,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun clearAll() {
         currentInput = ""
+        currentExpression = ""
         result = BigDecimal.ZERO
         lastOperation = "="
         textViewResult.text = "0"
+        textViewExpression.text = ""
     }
 
     private fun backspace() {
